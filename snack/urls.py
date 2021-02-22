@@ -18,7 +18,9 @@ from django.urls import include,path
 from menu import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',views.home,name='home'),
+    #path('home/',views.home,name='home'),
     path('menu/',views.menu,name='menu'),
-    path('login/',views.login,name='login'),
+    path('login/student',views.studentLogin,name='studentlogin'),
+    path('login/chef',views.chefLogin, name='cheflogin'),
+    path('login/student/forgotpassword',views.forgotpassword,name='fp'),
 ]
