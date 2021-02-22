@@ -1,0 +1,20 @@
+.bg {
+    /*background-color: black;*/
+
+        padding-top: 170px;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    
+    background-repeat: no-repeat;
+    background-attachment:fixed ;
+    
+}
+.as{
+    padding-top: 70px;
+
+}
+
+body, html 
+    {
+    height: 100%;
+    margin: 0;
+    }
