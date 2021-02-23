@@ -1,4 +1,3 @@
-{% load static %}
 <!doctype html>
 <html lang="en">
 <!--<section class="bg"></section>-->
@@ -15,17 +14,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Markazi+Text&display=swap" rel="stylesheet">
 
     <title>SNACK</title>
     <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
@@ -35,24 +23,22 @@
         .header {
             overflow: hidden;
             position: fixed;
-            z-index: 1;
+            z-index: 2;
             top: 0;
-            /* background-color:#ede6f8; */
+            background-color: beige;
             margin-top: 0px;
             width: 100%;
         }
-        .nav-item
-        {
-            text-align: right;
-        }
     </style>
     <div class="header">
-        <nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: #ede6f8;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <h4 class="fontt header mx-2">SnACk</h4>
+                <h4><img src="inner menu/inner menu-imag/download.jfif" class="rounded-circle" alt="SNACK" width="100"
+                        height="100">SnACk 
+                </h4>
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link text-align: right;" href="#">Your Orders</a>
+                        <a class="nav-link" href="#">Your Orders</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">Student</a>
@@ -60,17 +46,14 @@
                 </ul>
             </div>
         </nav>
-        <div class="divider">
-            <p class="divider"></p>
-        </div>
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>90%</strong> of students who use phone in class gets caught by their teacher
+            <strong>Bro!</strong> Class lo phone use cheyodhu bro
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active my-2" aria-current="page"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="index.html">Home</a></li>
             </ol>
         </nav>
     </div>
