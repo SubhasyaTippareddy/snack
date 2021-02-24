@@ -19,8 +19,8 @@ from menu import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('home/',views.home,name='home'),
-    path('menu/',views.menu,name='menu'),
-    path('',views.studentLogin,name='studentlogin'),
+    path('menu/',views.menu,name='menu'), #views here is the file name in menu folder". menu"for calling the func menu in the view folder
+    path('',views.studentLogin,name='studentlogin'), 
     path('login/chef',views.chefLogin, name='cheflogin'),
     path('login/student/forgotpassword',views.forgotpassword,name='fp'),
     path('menu/breakfast',views.breakFast,name='breakfast'),
