@@ -16,6 +16,7 @@
     padding-left: var(--bs-gutter-x,.0rem);
     margin-right: auto;
     margin-left: auto;
+    background-color:#ede6f8;
 }
 .navbar {
     position: relative;
@@ -49,3 +50,4 @@ body, html
     height: 100%;
     margin: 0;
     }
+    

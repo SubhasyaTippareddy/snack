@@ -8,6 +8,10 @@
     background-size: cover;
     background-attachment: fixed;
       }
+      .navcolor
+      {
+        background-color:#f7e4ee;
+      }
       .fontt
       {
         font-family: 'Bai Jamjuree', sans-serif; /*font family from google fonts*/
