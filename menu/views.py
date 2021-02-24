@@ -16,6 +16,8 @@ def breakFast(request):
     return render(request,'./breakfast.html')
 def Cart(request):
     return render(request,'./cart.html')
+def Cook(request):
+    return render(request,'./cook.html')
 '''
 def student_login(request):
     if(request.method=='POST'):
