@@ -24,4 +24,6 @@ urlpatterns = [
     path('login/chef',views.chefLogin, name='cheflogin'),
     path('login/student/forgotpassword',views.forgotpassword,name='fp'),
     path('menu/breakfast',views.breakFast,name='breakfast'),
+    path('menu/cart',views.Cart,name='cart'),
+    
 ]

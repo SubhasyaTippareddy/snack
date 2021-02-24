@@ -14,6 +14,8 @@ def forgotpassword(request):
     return render(request,'./forgotpassword.html')
 def breakFast(request):
     return render(request,'./breakfast.html')
+def Cart(request):
+    return render(request,'./cart.html')
 '''
 def student_login(request):
     if(request.method=='POST'):
