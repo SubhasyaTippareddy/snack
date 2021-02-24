@@ -34,24 +34,37 @@
 </head>
 
 <body class="bg">
-
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:  #f7e4ee">
-    <div class="container-fluid navcolor">
-      <a class="navbar-brand fontt" href="#">SnACk</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon "></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <!-- Nav bar-->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ede6f8;">
+    <a class="navbar-brand fontt" href="#">&nbsp;&nbsp;&nbsp;SnACk</a>
+    <!--&nbsp; for adding imaginary space-->
+    <div class="navbar" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <div class="float-left">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href={% url 'cheflogin' %}>Chef?</a>
+            <a class="nav-link float-left mx-3" href={% url 'cheflogin' %}>Are you a Chef ?</a>
           </li>
-          
-          </li>
-      </div>
+        </div>
     </div>
   </nav>
+  <!-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ede6f8;">
+    <a class="navbar-brand fontt" href="#">&nbsp;&nbsp;&nbsp;SnACk</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <div class="float-lg-right">
+          <li class="nav-item">
+            <a class="nav-link float-right" href={% url 'cheflogin' %}>Are you a Chef? </a>
+          </li>
+
+
+        </form>
+    </div>
+  </nav> -->
   <section class="Form my-4 mx-5">
     <div class="container d-flex justify-content-center bg">
       <div class="row gy-2 ">

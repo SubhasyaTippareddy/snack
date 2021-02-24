@@ -1,0 +1,147 @@
+{% load static%}
+<!doctype html>
+<html lang="en">
+<!--<section class="bg"></section>-->
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <title>SNACK-breakfast</title>
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/cart.css'%}">
+    <style>
+        .header {
+            overflow: hidden;
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            background-color: beige;
+            margin-top: 0px;
+            width: 100%;
+        }
+    </style>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ede6f8;">
+            <a class="navbar-brand fontt" href="#">&nbsp;&nbsp;&nbsp;SnACk</a>
+            <!--&nbsp; for adding imaginary space-->
+            <div class="navbar" id="navbarSupportedContent">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Your Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Student</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Bro!</strong> Class lo phone use cheyodhu bro
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'menu' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Breakfast</li>
+            </ol>
+        </nav>
+    </div>
+</head>
+
+<body>
+    <section class="bg">
+        <div class="container cartp">
+            <table>
+                <tr>
+                    <th>Food Item</th>
+                    <th>Quantity</th>
+                    <th>Sub total</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="/static/images/dosa.jfif">
+                            <div>
+                                <p>Dosa</p>
+                                <small>
+                                    Price:25Rs
+                                </small>
+                                <a href="">Remove </a>
+                            </div>
+
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>Rs.25</td>
+                </tr>
+
+
+
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="/static/images/dosa.jfif">
+                            <div>
+                                <p>Dosa</p>
+                                <small>
+                                    Price:25Rs
+                                </small>
+                                <br>
+                                <a>
+                                    <href="">Remove
+                                </a>
+                            </div>
+
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>Rs.25</td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="/static/images/dosa.jfif">
+                            <div>
+                                <p>Dosa</p>
+                                <small>
+                                    Price:25Rs
+                                </small>
+                                <br>
+                                <a>
+                                    <href="">Remove
+                                </a>
+                            </div>
+
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>Rs.25</td>
+                </tr>
+            </table>
+
+            <div class="total-price">
+                <table>
+                    <tr>
+                        <td>Total</td>
+                        <td>Rs.75</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
