@@ -22,6 +22,8 @@
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/Student.css'%}"> -->
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
@@ -49,7 +51,7 @@
                 <div class="dropdown-divider"></div>
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link stu" href="#">Your Orders</a>
+                        <a class="nav-link stu" href={% url 'cart' %}>Your Orders</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link stu" aria-current="page" href="#">Student</a>
@@ -79,12 +81,10 @@
                             <img src="/static/images/breakfast.jpg" class="card-img-top" alt="...">
 
                             <div class="card-body">
-                                <h5 class="card-title">Break Fast</h5>
+                                <h5 class="card-title stu">Breakfast</h5>
                                 </h5>
-                                <p class="card-text">This is a longer card with supporting text as a natural
-                                    lead-in
-                                    to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <p class="card-text menufont"> Breakfast like a king</p>
+                                <a href="#" class="btn btn-primary">Order!</a>
                             </div>
                         </div>
                     </div>
@@ -92,11 +92,11 @@
                         <div class="card">
                             <img src="/static/images/lunch.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Lunch</h5>
+                                <h5 class="card-title stu">Lunch</h5>
                                 </h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                <p class="card-text menufont">There is no such things as lunch
                                 </p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <a href="#" class="btn btn-primary">Order!</a>
                             </div>
                         </div>
                     </div>
@@ -104,12 +104,10 @@
                         <div class="card ">
                             <img src="/static/images/Snacks.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Snacks</h5>
+                                <h5 class="card-title stu">Snacks</h5>
                                 </h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in
-                                    to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <p class="card-text menufont">Keep your friends close and snacks CLOSER!!</p>
+                                <a href="#" class="btn btn-primary">Order!</a>
                             </div>
                         </div>
                     </div>
@@ -117,12 +115,10 @@
                         <div class="card">
                             <img src="/static/images/Bevarages.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Bevarages</h5>
+                                <h5 class="card-title stu">Bevarages</h5>
                                 </h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in
-                                    to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <p class="card-text menufont">Give me coke! not Pepsi </p>
+                                <a href="#" class="btn btn-primary">Order!</a>
                             </div>
                         </div>
                     </div>
@@ -130,12 +126,10 @@
                         <div class="card">
                             <img src="/static/images/Chips.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Chips</h5>
+                                <h5 class="card-title stu">Chips</h5>
                                 </h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in
-                                    to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <p class="card-text menufont">Legends are those people who call it Red Lays not "spanish tomato Tango"</p>
+                                <a href="#" class="btn btn-primary">Order!</a>
                             </div>
                         </div>
                     </div>

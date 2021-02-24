@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+#from menu.models import Student,User
+#admin.site.register(Student)
