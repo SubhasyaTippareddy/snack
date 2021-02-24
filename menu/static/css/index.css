@@ -10,7 +10,7 @@
 }
 .container-fluid
 {
-    /* CSS changes amde to fill up the nav bar  */
+    /* CSS changes made to fill up the nav bar  */
     width: 100%;
     padding-right: var(--bs-gutter-x,.0rem);
     padding-left: var(--bs-gutter-x,.0rem);

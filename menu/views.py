@@ -12,6 +12,8 @@ def chefLogin(request):
     return render(request,'./Chef.html')
 def forgotpassword(request):
     return render(request,'./forgotpassword.html')
+def breakFast(request):
+    return render(request,'./breakfast.html')
 '''
 def student_login(request):
     if(request.method=='POST'):
