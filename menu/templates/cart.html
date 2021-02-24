@@ -52,102 +52,95 @@
         </div>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="{% url 'menu' %}">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Breakfast</li>
+                <li class="breadcrumb-item"><a href="{% url 'menu' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Breakfast</li>
             </ol>
-          </nav>
+        </nav>
     </div>
 </head>
 
 <body>
     <section class="bg">
-        <section class="cart">
-            <div class="container cartp">
-                <div class="lg-4 sm-2 g-4">
+        <div class="container cartp">
+            <table>
+                <tr>
+                    <th>Food Item</th>
+                    <th>Quantity</th>
+                    <th>Sub total</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="/static/images/dosa.jfif">
+                            <div>
+                                <p>Dosa</p>
+                                <small>
+                                    Price:25Rs
+                                </small>
+                                <a href="">Remove </a>
+                            </div>
+
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>Rs.25</td>
+                </tr>
+
+
+
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="/static/images/dosa.jfif">
+                            <div>
+                                <p>Dosa</p>
+                                <small>
+                                    Price:25Rs
+                                </small>
+                                <br>
+                                <a>
+                                    <href="">Remove
+                                </a>
+                            </div>
+
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>Rs.25</td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="/static/images/dosa.jfif">
+                            <div>
+                                <p>Dosa</p>
+                                <small>
+                                    Price:25Rs
+                                </small>
+                                <br>
+                                <a>
+                                    <href="">Remove
+                                </a>
+                            </div>
+
+                        </div>
+                    </td>
+                    <td><input type="number" value="1"></td>
+                    <td>Rs.25</td>
+                </tr>
+            </table>
+
+            <div class="total-price">
                 <table>
                     <tr>
-                        <th>Food Item</th>
-                        <th>Quantity</th>
-                        <th>Sub total</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="cart-info">
-                                <img src="/static/images/dosa.jfif">
-                                <div>
-                                    <p>Dosa</p>
-                                    <small>
-                                        Price:25Rs
-                                    </small>
-                                    <br>
-                                    <a><href="">Remove</a>
-                                </div>
-
-                            </div>
-                        </td>
-                        <td><input type="number" value="1"></td>
-                        <td>Rs.25</td>
-                    </tr>
-                
-
-                
-                    <tr>
-                        <td>
-                            <div class="cart-info">
-                                <img src="/static/images/dosa.jfif">
-                                <div>
-                                    <p>Dosa</p>
-                                    <small>
-                                        Price:25Rs
-                                    </small>
-                                    <br>
-                                    <a><href="">Remove</a>
-                                </div>
-
-                            </div>
-                        </td>
-                        <td><input type="number" value="1"></td>
-                        <td>Rs.25</td>
-                    </tr>
-                
-                   
-                    <tr>
-                        <td>
-                            <div class="cart-info">
-                                <img src="/static/images/dosa.jfif">
-                                <div>
-                                    <p>Dosa</p>
-                                    <small>
-                                        Price:25Rs
-                                    </small>
-                                    <br>
-                                    <a><href="">Remove</a>
-                                </div>
-
-                            </div>
-                        </td>
-                        <td><input type="number" value="1"></td>
-                        <td>Rs.25</td>
+                        <td>Total</td>
+                        <td>Rs.75</td>
                     </tr>
                 </table>
-
-                <div class="total-price">
-                    <table>
-                        <tr>
-                            <td>Total</td>
-                            <td>Rs.75</td>
-                        </tr>
-                    </table>
-                </div>
-
-
             </div>
-
-
-
-            </div>
-
-        </section>
+        </div>
     </section>
 </body>
 

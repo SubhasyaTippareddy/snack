@@ -54,11 +54,7 @@ body, html
 .cartp
 {
     margin:80px auto;
-    /* background-image: radial-gradient(circle, #ece9e1, #f3e7e0, #f8e5e5, #f7e4ee, #ede6f8);
-        min-height:100%;
-        min-width: 100%;
-    background-repeat: no-repeat;
-    background-attachment:fixed ; */
+    
     
 }
 table{
@@ -75,7 +71,7 @@ th{
     text-align:left;
     padding:5px;
     color:white;
-    background-color:red;
+    background:red;
     font-weight: normal;
 }
 td{
@@ -84,12 +80,12 @@ td{
 
 }
 td input{
-    width: 40px;
+    width: 60px;
     height: 30px;
     padding: 5px;
 }
 td a{
-    color:white;
+    color:red;
     font-size: 12px;
 }
 td img{
