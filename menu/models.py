@@ -22,12 +22,12 @@ class Cook(models.Model):
         return self.user.username
 
 
-# class Food(models.Model):
-# 	fname = models.CharField(max_length=200)
-# 	price = models.FloatField()
-# 	fimage = models.FileField(null=True, blank=True, upload_to='static/images/')
-# 	is_veg=models.BooleanField(default=True)
-# 	time=[('breakfast','breakfast'),('lunch','lunch'),('snacks','snacks'),('beverages','beverages'),('chips','chips')]   
+class Food(models.Model):
+	fname = models.CharField(max_length=200)
+	price = models.FloatField()
+	fimage = models.FileField(null=True, blank=True, upload_to='static/images/')
+	is_veg=models.BooleanField(default=True)
+	time=[('breakfast','breakfast'),('lunch','lunch'),('snacks','snacks'),('beverages','beverages'),('chips','chips')]   
 
 # 	meal_time=models.CharField(max_length=50,choices=time) #choices - Breakfast,Lunch,Snacks,Beverages
 # 	def __str__(self):
@@ -35,7 +35,7 @@ class Cook(models.Model):
 # 	@property
 # 	def imageURL(self):
 # 		try:
-# 			url = self.image.url
+# 			url = self.fimage.url
 # 		except:
 # 			url = ''
 # 		return url
@@ -43,21 +43,23 @@ class Cook(models.Model):
 # class Order(models.Model):
 # 	Student = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True, blank=True)
 # 	complete = models.BooleanField(default=False)
-#     date_ordered = models.DateTimeField(auto_now_add=True)
+#   date_ordered = models.DateTimeField(auto_now_add=True)
+#	transaction_id = models.CharField(max_length=100, null=True)
+
 # 	def __str__(self):
 # 		return str(self.id)
 		
 
 # 	@property
 # 	def get_cart_total(self):
-# 		orderitems = self.orderitem_set.all()
-# 		total = sum([item.get_total for item in orderitems])
+# 		fooditems = self.orderitem_set.all()
+# 		total = sum([item.get_total for item in fooditems])
 # 		return total 
 
 # 	@property
 # 	def get_cart_items(self):
-# 		orderitems = self.orderitem_set.all()
-# 		total = sum([item.quantity for item in orderitems])
+# 		fooditems = self.orderitem_set.all()
+# 		total = sum([item.quantity for item in fooditems])
 # 		return total 
 
 # class CartItem(models.Model):
