@@ -17,13 +17,33 @@ from django.contrib import admin
 from django.urls import include,path
 from menu import views
 urlpatterns = [
+    #admin
     path('admin/', admin.site.urls),
+
     #path('home/',views.home,name='home'),
-    path('menu/',views.menu,name='menu'), #views here is the file name in menu folder". menu"for calling the func menu in the view folder
-    path('',views.studentLogin,name='studentlogin'), 
-    path('login/chef',views.chefLogin, name='cheflogin'),
+
+    #register
+    path('cook_register',views.cook_register.as_view(),name='cookregister'),
+    path('student_register/',views.student_register.as_view(), name='studentregister'),
+
+    #login
+    path('',views.studentLogin,name='studentlogin'),
+    path('cheflogin/',views.chefLogin, name='cheflogin'),
     path('login/student/forgotpassword',views.forgotpassword,name='fp'),
+
+    #logout
+    path('slogout/',views.logout_student,name='studentlogout'),
+    path('clogout/',views.logout_cook,name='cooklogout'),
+
+    #menu and submenus
+    path('menu/',views.menu,name='menu'), #student afterlogin
     path('menu/breakfast',views.breakFast,name='breakfast'),
-    path('menu/cart',views.Cart,name='cart'),
-    path('login/chef/cook',views.Cook,name='cook'),
+
+    #cart
+    path('cart',views.Cart,name='cart'),
+
+    #cook_views
+    path('login/chef/cook',views.Cook,name='cook'), #cook after login
+    
+    path('accounts',include('django.contrib.auth.urls')),
 ]
