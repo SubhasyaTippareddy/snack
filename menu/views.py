@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate,login,logout
 from django.views.generic import CreateView
 from .forms import StudentRegistrationForm,CookRegistrationForm
-from .models import User
+from .models import User,Food
 from django.contrib.auth.forms import AuthenticationForm
 
 def menu(request):
@@ -11,7 +11,7 @@ def menu(request):
     return render(request,'./index.html',context)
 
 def breakFast(request):
-    return render(request,'./breakfast.html')
+    return render(request,'./breakfast.html',context={'food':Food.objects.all()})
 
 def Cook(request):
     return render(request,'./cook_orders.html')
