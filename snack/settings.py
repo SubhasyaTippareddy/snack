@@ -28,9 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 # '99ea43d8ac12.ngrok.io','127.0.0.1' Add here for ngrok
 
-
 # Application definition
-
+LOGIN_REDIRECT_URL='/menu'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,15 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'menu',
-    'snack',
-]
+    'menu.apps.MenuConfig',
+    'widget_tweaks',
 
+]
+AUTH_USER_MODEL='menu.User'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'snack.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+DB_NAME='Canteen_system'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
