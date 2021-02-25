@@ -45,34 +45,84 @@
         }
     </style>
     <div class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <h4 class="fontt">&nbsp; SnACk</h4>
-                <div class="dropdown-divider"></div>
+        <nav class="navbar navbar-expand-lg navbar-expand-sm navbar-light" style="background-color: #ede6f8;">
+            <a class="navbar-brand fontt" href="#">&nbsp;&nbsp;&nbsp;SnACk</a>
+            <!--&nbsp; for adding imaginary space-->
+            <div class="navbar" id="navbarSupportedContent">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link stu" href={% url 'cart' %}>Your Orders</a>
+                        <a class="nav-link stu" href={% url 'cook' %}>Refresh</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link stu" aria-current="page" href="#">Student</a>
+                        <a class="nav-link stu" aria-current="page" href=#>Your account</a>
                     </li>
                 </ul>
-                
+
             </div>
-          </nav>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Fun fact:</strong> 90% of students get caught while using phone in class
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        </nav>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item active" aria-current="page"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#">Home</a></li>
             </ol>
-          </nav>
+        </nav>
     </div>
 </head>
 
 <body class="bg">
+    <body class="bg">
+
+        <div class="container con">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
+                    <table class="table table-hover ">
+                        <thead>
+                            <tr>
+                                <th class="cart">Product</th>
+                                <th class="cart">Quantity</th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-sm-8 col-md-6">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h6 class="stu">Product name</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-sm-1 col-md-1" style="text-align: center">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+                                </td>
+                                <td class="col-sm-1 col-md-1">
+                                    <button type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove"></span> Done
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-8 col-md-6">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h6 class="stu">Product name</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-sm-1 col-md-1" style="text-align: center">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+                                </td>
+                                <td class="col-sm-1 col-md-1">
+                                    <button type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove"></span> Done
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
     
 </body>
 
