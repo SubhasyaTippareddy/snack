@@ -12,26 +12,25 @@ class Student(models.Model):
     sname= models.CharField(max_length=100, blank=False)
 
     def __str__(self):
-        return self.user.username
+        return self.sname
 
 class Cook(models.Model): 
     user=models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
     email=models.EmailField(max_length=100,blank=False)
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
 
 class Food(models.Model):
 	fname = models.CharField(max_length=200)
 	price = models.FloatField()
-	fimage = models.FileField(null=True, blank=True, upload_to='static/images/')
+	fimage = models.ImageField(null=True, blank=True, upload_to='static/images/')
 	is_veg=models.BooleanField(default=True)
 	time=[('breakfast','breakfast'),('lunch','lunch'),('snacks','snacks'),('beverages','beverages'),('chips','chips')]   
-
-# 	meal_time=models.CharField(max_length=50,choices=time) #choices - Breakfast,Lunch,Snacks,Beverages
-# 	def __str__(self):
-# 		return self.fname
+	meal_time=models.CharField(max_length=50,choices=time) #choices - Breakfast,Lunch,Snacks,Beverages
+	def __str__(self):
+		return self.fname
 # 	@property
 # 	def imageURL(self):
 # 		try:

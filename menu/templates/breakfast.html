@@ -59,24 +59,37 @@
     </div>
 </head>
 
-<body>
+<body class="bg">
+    <div class="container my-4">
+        <div class="row col-lg-3 col-md-4 col-sm-6 mt-4">
+            <div class="card">
+                {% for f in food %}
+                <div class="col-lg-4">
+                    <div class="box-element product">
+                        <h6><strong>{{f.fname}}</strong></h6>
+                        <img src= "{{f.fimage.url}}" />
+                        <button data-product="{{product.id}}" data-action="add"
+                            class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
 
-    <section class="bg">
-        <div class="container my-4">
+                        <a class="btn btn-outline-success" href="#">View</a>
+                        <h4 style="float: right"><strong>${{f.price}}</strong></h4>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container my-4">
             <div class="row  row-cols-lg-4 row-cols-sm-2 g-4">
-
-
-
                 <div class="col mb-4">
                     <div class="card">
-                        <img src="/static/images/dosa.jfif" class="card-img-left" alt="...">
+                        {% for f in food %}
                         <div class="card-body">
                             <div class="product">
-                                <h1>Dosa<img src="/static/images/veg1.png" class="rounded-circle" style="float:right"
-                                        width="20" height="20"></h1>
-                                <h2>25Rs</h2>
-
-                                <p class="desc">It's Dosaaa man no description needed</p>
+                                <h2 class="fontt"style="float: left;">{{f.fname}}</h1>
+                                        <h2 class="fontt" style="float: right;">{{f.price}}</h2>
+                                        
                                 <div class="buttons">
                                     <div class="number-input sm-number-input" style="float:right">
                                         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
@@ -89,15 +102,16 @@
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
-                </div>
+                </div> -->
 
 
 
 
 
-            </div>
-        </div>
+    </div>
+    </div>
 
 
 
