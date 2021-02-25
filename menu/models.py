@@ -1,21 +1,72 @@
 from django.db import models
-#from django.contrib.auth.models import User
-# from django.contrib.auth.models import AbstractUser
-# from django.conf import settings
-#class User(AbstractUser):
+from django.contrib.auth.models import AbstractUser
+
+class User(AbstractUser):
+    is_student=models.BooleanField(default=False)
+    is_cook=models.BooleanField(default=False)
+    person_name=models.CharField(max_length=100)
     
-#     is_student=models.BooleanField(default=False)
-#     is_cook=models.BooleanField(default=False)
-# class Student(models.Model):
-#     user=models.OneToOneField(User,on_delete=models.CASCADE)
-#     username= models.CharField(max_length=8,blank=False,primary_key=True)
-#     sname=models.CharField(max_length=50,blank=False)
-#     password=models.CharField(max_length=20,blank=False)
-#     def __str__(self):
-#         return self.user.username
-# class Cook(models.Model):
-#     user=models.OneToOneField(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
-#     cname=models.CharField(max_length=25,blank=False)
-#     email=models.EmailField(max_length=100,blank=False)
-#     def __str__(self):
-#         return self.user.cname
+# Create your models here.
+class Student(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
+    sname= models.CharField(max_length=100, blank=False)
+
+    def __str__(self):
+        return self.user.username
+
+class Cook(models.Model): 
+    user=models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
+    email=models.EmailField(max_length=100,blank=False)
+
+    def __str__(self):
+        return self.user.username
+
+
+# class Food(models.Model):
+# 	fname = models.CharField(max_length=200)
+# 	price = models.FloatField()
+# 	fimage = models.FileField(null=True, blank=True, upload_to='static/images/')
+# 	is_veg=models.BooleanField(default=True)
+# 	time=[('breakfast','breakfast'),('lunch','lunch'),('snacks','snacks'),('beverages','beverages'),('chips','chips')]   
+
+# 	meal_time=models.CharField(max_length=50,choices=time) #choices - Breakfast,Lunch,Snacks,Beverages
+# 	def __str__(self):
+# 		return self.fname
+# 	@property
+# 	def imageURL(self):
+# 		try:
+# 			url = self.image.url
+# 		except:
+# 			url = ''
+# 		return url
+
+# class Order(models.Model):
+# 	Student = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True, blank=True)
+# 	complete = models.BooleanField(default=False)
+#     date_ordered = models.DateTimeField(auto_now_add=True)
+# 	def __str__(self):
+# 		return str(self.id)
+		
+
+# 	@property
+# 	def get_cart_total(self):
+# 		orderitems = self.orderitem_set.all()
+# 		total = sum([item.get_total for item in orderitems])
+# 		return total 
+
+# 	@property
+# 	def get_cart_items(self):
+# 		orderitems = self.orderitem_set.all()
+# 		total = sum([item.quantity for item in orderitems])
+# 		return total 
+
+# class CartItem(models.Model):
+# 	food = models.ForeignKey(Food, on_delete=models.SET_NULL, null=True)
+# 	order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
+# 	quantity = models.IntegerField(default=0, null=True, blank=True)
+# 	date_added = models.DateTimeField(auto_now_add=True)
+
+# 	@property
+# 	def get_total(self):
+# 		total = self.food.price * self.quantity
+# 		return total

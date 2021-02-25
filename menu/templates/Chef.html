@@ -1,4 +1,5 @@
-{% load static%}
+{% load static %}
+{% load widget_tweaks %}
 <!doctype html>
 <html lang="en">
 
@@ -69,22 +70,24 @@
             <div class="col-lg-7 col-sm-4 px-5 pt-5">
               <h3 class="stu">Chef Login</h3>
               <h5 class="login"> Login to your account</h5>
-              <form>
-                <div class="formrow">
-                  <div class="col-lg-7"style="">
-                    <input type="text" id="name" name="name" required minlength="10" maxlength="12" placeholder="Email-ID" class="form-control">
+              <form method="POST" action="{% url 'cheflogin' %}">
+                <div class="form-group">
+                  <div class="col-lg-7">
+                    {% render_field form.username class="form-control" placeholder="Username" %}
+                    <!-- <input type="text" id="name" name="name" required minlength="10" maxlength="12" placeholder="Email-ID" class="form-control"> -->
                   </div>
-                </div>
-                  <div class="formrow">
+                  <br>
                     <div class="col-lg-7 col-sm-2">
-                      <input type="password" placeholder="*********" class="form-control my-3 ">
+                      {% render_field form.password class="form-control" placeholder="*******" %}
+
+                      <!-- <input type="password" placeholder="*********" class="form-control my-3 "> -->
                     </div>
                   </div>
-                    <div class="formrow">
+                  <br>
                       <div class="col-lg-7">
                         <button type="submit" class="btn-1 mt-8 mb-3 ">Login</button>
                       </div>
-                    </div>
+                    
                 <br>
                  </br>
               </form>

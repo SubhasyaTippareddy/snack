@@ -1,0 +1,53 @@
+.bg{
+    background-image: radial-gradient(circle, #ece9e1, #f3e7e0, #f8e5e5, #f7e4ee, #ede6f8);
+        height: 100%; 
+        padding-top: 100px;
+        padding-bottom: 20px; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .container-fluid
+    {
+     
+      width: 100%;
+      padding-right: var(--bs-gutter-x,.0rem);
+      padding-left: var(--bs-gutter-x,.0rem);
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .navbar {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-top:0;
+      padding-bottom:0;
+    }
+    
+    
+      .cart
+      {
+        font-family: 'Josefin Sans', sans-serif;
+      }
+      .fontt
+        {
+          font-family: 'Bai Jamjuree', sans-serif; 
+          font-size: 2rem;  line-height: 1.5;  font-weight: 500;
+        }
+        .login
+        {
+          font-family: 'Markazi Text', serif;
+        }
+        .stu
+        {
+          font-family: 'Reem Kufi', sans-serif;
+        }
+    
+    body, html 
+      {
+      height: 100%;
+      margin: 0;
+      }

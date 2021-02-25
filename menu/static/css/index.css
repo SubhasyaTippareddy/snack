@@ -1,3 +1,6 @@
+.menufont{
+  font-family: 'Bebas Neue', cursive;
+}
 .bg {
     /*background-color: black;*/
 
@@ -10,12 +13,13 @@
 }
 .container-fluid
 {
-    /* CSS changes amde to fill up the nav bar  */
+    /* CSS changes made to fill up the nav bar  */
     width: 100%;
     padding-right: var(--bs-gutter-x,.0rem);
     padding-left: var(--bs-gutter-x,.0rem);
     margin-right: auto;
     margin-left: auto;
+    background-color:#ede6f8;
 }
 .navbar {
     position: relative;
@@ -49,3 +53,4 @@ body, html
     height: 100%;
     margin: 0;
     }
+    
