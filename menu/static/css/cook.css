@@ -1,27 +1,23 @@
-.menufont{
-    font-family: 'Bebas Neue', cursive;
-  }
-  .bg {
-      /*background-color: black;*/
-  
-          padding-top: 170px;
-          background-image: radial-gradient(circle, #ece9e1, #f3e7e0, #f8e5e5, #f7e4ee, #ede6f8);
-      
-      background-repeat: no-repeat;
-      background-attachment:fixed ;
-      
-  }
-  .container-fluid
-  {
-      /* CSS changes made to fill up the nav bar  */
+.bg{
+    background-image: radial-gradient(circle, #ece9e1, #f3e7e0, #f8e5e5, #f7e4ee, #ede6f8);
+        height: 100%; 
+        padding-top: 100px;
+        padding-bottom: 20px; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .container-fluid
+    {
+     
       width: 100%;
       padding-right: var(--bs-gutter-x,.0rem);
       padding-left: var(--bs-gutter-x,.0rem);
       margin-right: auto;
       margin-left: auto;
-      background-color:#ede6f8;
-  }
-  .navbar {
+    }
+    .navbar {
       position: relative;
       display: flex;
       flex-wrap: wrap;
@@ -29,14 +25,16 @@
       justify-content: space-between;
       padding-top:0;
       padding-bottom:0;
-  }
-  .as{
-      padding-top: 70px;
-  
-  }
+    }
+    
+    
+      .cart
+      {
+        font-family: 'Josefin Sans', sans-serif;
+      }
       .fontt
         {
-          font-family: 'Bai Jamjuree', sans-serif; /*font family from google fonts*/
+          font-family: 'Bai Jamjuree', sans-serif; 
           font-size: 2rem;  line-height: 1.5;  font-weight: 500;
         }
         .login
@@ -47,10 +45,9 @@
         {
           font-family: 'Reem Kufi', sans-serif;
         }
-  
-  body, html 
+    
+    body, html 
       {
       height: 100%;
       margin: 0;
       }
-      
