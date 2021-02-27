@@ -1,56 +1,56 @@
 .bg {
-    /*background-color: black;*/
+	/*background-color: black;*/
+	padding-top: 170px;
+	background-image: radial-gradient(circle, #ece9e1, #f3e7e0, #f8e5e5, #f7e4ee, #ede6f8);
+	min-height: 100%;
+	min-width: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
 
-        padding-top: 170px;
-        background-image: radial-gradient(circle, #ece9e1, #f3e7e0, #f8e5e5, #f7e4ee, #ede6f8);
-        min-height:100%;
-        min-width: 100%;
-    background-repeat: no-repeat;
-    background-attachment:fixed ;
-    
+.container-fluid {
+	/* CSS changes made to fill up the nav bar  */
+	width: 100%;
+	padding-right: var(--bs-gutter-x, .0rem);
+	padding-left: var(--bs-gutter-x, .0rem);
+	margin-right: auto;
+	margin-left: auto;
 }
-.container-fluid
-{
-    /* CSS changes made to fill up the nav bar  */
-    width: 100%;
-    padding-right: var(--bs-gutter-x,.0rem);
-    padding-left: var(--bs-gutter-x,.0rem);
-    margin-right: auto;
-    margin-left: auto;
-}
+
 .navbar {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding-top:0;
-    padding-bottom:0;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 0;
+	padding-bottom: 0;
 }
-.as{
-    padding-top: 70px;
 
+.as {
+	padding-top: 70px;
 }
-    .fontt
-      {
-        font-family: 'Bai Jamjuree', sans-serif; /*font family from google fonts*/
-        font-size: 2rem;  line-height: 1.5;  font-weight: 500;
-      }
-      .login
-      {
-        font-family: 'Markazi Text', serif;
-      }
-      .stu
-      {
-        font-family: 'Reem Kufi', sans-serif;
-      }
-.quantity
-{
-  width:10px;
+
+.fontt {
+	font-family: 'Londrina Solid', cursive;
+	font-size: 2rem;
+	line-height: 1.5;
 }
-body, html 
-    {
-    height: 100%;
-    margin: 0;
-    }
-    
+
+.login {
+	font-family: 'Markazi Text', serif;
+}
+
+.stu {
+	font-family: 'Reem Kufi', sans-serif;
+}
+
+.quantity {
+	width: 10px;
+}
+
+body,
+html {
+	height: 100%;
+	margin: 0;
+}

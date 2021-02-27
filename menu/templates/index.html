@@ -16,11 +16,13 @@
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
 
-    <title>SNACK</title>
+    <title>SNACK-lunch</title>
     <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}">
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/Student.css'%}"> -->
     <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -84,7 +86,7 @@
                                 <h5 class="card-title stu">Breakfast</h5>
                                 </h5>
                                 <p class="card-text menufont"> Breakfast like a king</p>
-                                <a href="#" class="btn btn-primary">Order!</a>
+                                <a href="{% url 'breakfast' %}" class="btn btn-primary">Order!</a>
                             </div>
                         </div>
                     </div>
@@ -96,7 +98,7 @@
                                 </h5>
                                 <p class="card-text menufont">There is no such things as lunch
                                 </p>
-                                <a href="#" class="btn btn-primary">Order!</a>
+                                <a href="{% url 'lunch' %}" class="btn btn-primary">Order!</a>
                             </div>
                         </div>
                     </div>

@@ -22,6 +22,8 @@
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/Student.css'%}"> -->
     <!-- googlefonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -53,10 +55,10 @@
             <div class="navbar" id="navbarSupportedContent">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link stu" href={% url 'cart' %}>Your Orders</a>
+                        <a class="nav-link stu" href={% url 'cart' %}>Refresh</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link stu" aria-current="page" href=#>Student</a>
+                        <a class="nav-link stu" aria-current="page" href="{% url 'studentlogout' %}">Logout</a>
                     </li>
                 </ul>
 
@@ -64,7 +66,7 @@
         </nav>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'menu' %}">Home</a></li>
             </ol>
         </nav>
     </div>
@@ -79,23 +81,26 @@
                     <thead>
                         <tr>
                             <th class="cart">Product</th>
-                            <th class="cart">Quantity</th>
+                            <th> </th>
                             <th class="text-center cart">Price</th>
                             <th class="text-center cart">Total</th>
                             <th> </th>
                         </tr>
                     </thead>
                     <tbody>
+
+
+
                         <tr>
                             <td class="col-sm-8 col-md-6">
                                 <div class="media">
                                     <div class="media-body">
-                                        <h6 class="stu">Product name</h6>
+                                        <h6 class="stu">{{p.pname}}</h6>
                                     </div>
                                 </div>
                             </td>
                             <td class="col-sm-1 col-md-1" style="text-align: center">
-                                <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+                                <!-- <input type="email" class="form-control" id="exampleInputEmail1" value="3"> -->
                             </td>
                             <td class="col-sm-1 col-md-1 text-center"><strong>&#8377;4.87</strong></td>
                             <td class="col-sm-1 col-md-1 text-center"><strong>&#8377;14.61</strong></td>
@@ -105,6 +110,7 @@
                                 </button>
                             </td>
                         </tr>
+
                         <tr>
                             <td class="col-md-6">
                                 <div class="media">
@@ -114,7 +120,7 @@
                                 </div>
                             </td>
                             <td class="col-md-1" style="text-align: center">
-                                <input type="email" class="form-control" id="exampleInputEmail1" value="2">
+                                <!-- <input type="email" class="form-control" id="exampleInputEmail1" value="2"> -->
                             </td>
                             <td class="col-md-1 text-center"><strong>&#8377;4.99</strong></td>
                             <td class="col-md-1 text-center"><strong>&#8377;9.98</strong></td>
@@ -124,6 +130,15 @@
                                 </button>
                             </td>
                         </tr>
+
+
+
+
+
+
+
+
+
                         <tr>
                             <td> </td>
                             <td> </td>
@@ -131,7 +146,7 @@
                                 <h3 class="stu">Total</h3>
                             </td>
                             <td class="text-right">
-                                <h3><strong>$31.53</strong></h3>
+                                <h3><strong>&#8377;31.53</strong></h3>
                             </td>
                             <td></td>
                         </tr>
@@ -146,6 +161,9 @@
                                 </button>
                             </td>
                         </tr>
+
+
+
                     </tbody>
                 </table>
             </div>

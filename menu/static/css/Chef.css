@@ -1,74 +1,83 @@
 .bg {
-  background-image: radial-gradient(circle, #ece9e1, #f3e7e0, #f8e5e5, #f7e4ee, #ede6f8);
-    height: 100%; 
-    /* padding-top: 90px; */
-    padding-bottom: 20px; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-      }
-      .navcolor
-      {
-        background-color:#f7e4ee;
-      }
-      .fontt
-      {
-        font-family: 'Bai Jamjuree', sans-serif; /*font family from google fonts*/
-        font-size: 2rem;  line-height: 1.5;  font-weight: 500;
-      }
-      .login
-      {
-        font-family: 'Markazi Text', serif;
-      }
-      .stu
-      {
-        font-family: 'Reem Kufi', sans-serif;
-      }
-body, html {
-    height: 100%;
-    margin: 0;
-  }
-  .row
-  {
-    background: white;
-    border-radius: 50px;
-    box-shadow: rgb(175, 140, 126);
-  }
-  img
-  {
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    max-width: 100%;
-    height: auto;
-    padding-bottom: 10px;
+	background-image: radial-gradient(circle, #ece9e1, #f3e7e0, #f8e5e5, #f7e4ee, #ede6f8);
+	height: 100%;
+	/* padding-top: 90px; */
+	padding-bottom: 20px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
 
-  }
-  .quote
-  {
-    font-family: 'Gochi Hand', cursive;
-  }
-  /* .h1 
+.navcolor {
+	background-color: #f7e4ee;
+}
+
+.maybe {
+	font-size: 2rem;
+}
+
+.fontt {
+	font-family: 'Londrina Solid', cursive;
+	font-size: 2rem;
+	line-height: 1.5;
+}
+
+.login {
+	font-family: 'Markazi Text', serif;
+}
+
+.stu {
+	font-family: 'Reem Kufi', sans-serif;
+}
+
+body,
+html {
+	height: 100%;
+	margin: 0;
+}
+
+.row {
+	background: white;
+	border-radius: 50px;
+	box-shadow: rgb(175, 140, 126);
+}
+
+img {
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+	max-width: 100%;
+	height: auto;
+	padding-bottom: 10px;
+}
+
+.quote {
+	font-family: 'Gochi Hand', cursive;
+}
+
+
+/* .h1 
   {
     font-family: "Times New Roman", Times, serif;
   } */
-  
-  .btn-1{
-    height: 50px;
-    width: 100%;
-    background-color: black;
-    color: white;
-    border-radius: 4px;
-    font-weight: bold;
-  }
-  .btn-1:hover{
-    background: white;
-    border:1px solid;
-    color:black
-  }
-  .shad
-  {
-    box-shadow: 10px 10px 10px black;
-  }
+
+.btn-1 {
+	height: 50px;
+	width: 100%;
+	background-color: black;
+	color: white;
+	border-radius: 4px;
+	font-weight: bold;
+}
+
+.btn-1:hover {
+	background: white;
+	border: 1px solid;
+	color: black
+}
+
+.shad {
+	box-shadow: 10px 10px 10px black;
+}

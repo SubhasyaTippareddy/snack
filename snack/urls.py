@@ -40,9 +40,11 @@ urlpatterns = [
     #menu and submenus
     path('menu/',views.menu,name='menu'), #student afterlogin
     path('menu/breakfast',views.breakFast,name='breakfast'),
+    path('menu/lunch',views.lunch,name='lunch'),
 
     #cart
     path('cart',views.Cart,name='cart'),
+    path('dele',views.dele,name='dele'),
 
     #cook_views
     path('login/chef/cook',views.Cook,name='cook'), #cook after login
