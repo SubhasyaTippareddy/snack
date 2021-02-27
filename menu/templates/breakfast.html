@@ -64,10 +64,11 @@
         <div class="row col-lg-3 col-md-4 col-sm-6 mt-4">
             <div class="card">
                 {% for f in food %}
-                <div class="col-lg-4">
+                
                     <div class="box-element product">
                         <h6><strong>{{f.fname}}</strong></h6>
                         <img src= "{{f.fimage.url}}" />
+                        <hr>
                         <button data-product="{{product.id}}" data-action="add"
                             class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
 
@@ -75,7 +76,7 @@
                         <h4 style="float: right"><strong>${{f.price}}</strong></h4>
 
                     </div>
-                </div>
+                
                 {% endfor %}
             </div>
         </div>
