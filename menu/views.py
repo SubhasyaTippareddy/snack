@@ -11,7 +11,7 @@ def menu(request):
     return render(request,'./index.html',context)
 
 def breakFast(request):
-    return render(request,'./breakfast.html',context={'food':Food.objects.all().filter(meal_time='breakfast'),'combo':Combo.objects().all()})
+    return render(request,'./breakfast.html',context={'food':Food.objects.all().filter(meal_time='breakfast'),'combo':combo.objects().all()})
 
 def lunch(request):
     return render(request,'./lunch.html',context={'food':Food.objects.all().filter(meal_time='lunch')})
@@ -22,8 +22,8 @@ def Cook(request):
 def Cart(request):
     return render(request,'./cart.html')
 
-def dele(request):
-    return render(request,'./dele.html')
+# def dele(request):
+#     return render(request,'./dele.html')
 
 
 def forgotpassword(request):

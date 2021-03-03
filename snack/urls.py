@@ -44,7 +44,7 @@ urlpatterns = [
 
     #cart
     path('cart',views.Cart,name='cart'),
-    path('dele',views.dele,name='dele'),
+    # path('dele',views.dele,name='dele'),
 
     #cook_views
     path('login/chef/cook',views.Cook,name='cook'), #cook after login
