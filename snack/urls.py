@@ -52,6 +52,7 @@ urlpatterns = [
     path('remove_item/<uuid:cart_item_id>', views.remove_item,name='remove_item'),
     path('add_item/<uuid:cart_item_id>', views.add_item,name='add_item'),
     path('subtract_item/<uuid:cart_item_id>', views.subtract_item,name='subtract_item'),
+    path('confirm_order',views.confirm_order,name='confirm_order'),
     #add_to_cart_urls
     path('add_to_cart/breakfast/<uuid:food_id>',views.add_to_cart_breakfast, name='add_to_cart_breakfast'),
     path('add_to_cart/lunch/<uuid:food_id>',views.add_to_cart_lunch, name='add_to_cart_lunch'),

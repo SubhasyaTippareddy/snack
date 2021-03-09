@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate,login,logout
 from django.views.generic import CreateView
 from .forms import StudentRegistrationForm,CookRegistrationForm
-from .models import User,Food,CartItem,Student,Order
+from .models import User,Food,CartItem,Student,Order,OrderItem
 from django.contrib.auth.forms import AuthenticationForm
 
 #menu
@@ -197,24 +197,25 @@ def add_to_cart_chips(request, food_id):
         print(cartitem)
     return redirect('chips')
 
-# def confirm_order(request):
-#     #student=Student.objects.get(user=request.user)
-#     cartitems=CartItem.objects.filter(student__user=request.user)
-#     orderlist=[]
-#     for item in cartitems:
-#         orderitem=OrderItem()
-#         orderitem.food=item.food
-#         orderitem.quantity=item.quantity
-#         orderitem.orderitem_id=item.cart_item_id
-#         orderitem.save()
-#         item.delete()
-#         orderlist.append(orderitem)
-#     order=Order()
-#     order.student=Student.objects.get(user=request.user)
-#     order.orderitem=orderlist
-#     order.save()
-
-    
+def confirm_order(request):
+    #student=Student.objects.get(user=request.user)
+    cartitems=CartItem.objects.filter(student__user=request.user)
+    orderlist=[]
+    for item in cartitems:
+        order_item=OrderItem()
+        order_item.food=item.food
+        order_item.quantity=item.quantity
+        order_item.save()
+        print(order_item)
+        orderlist.append(order_item)
+        item.delete()
+    order=Order()
+    order.student=Student.objects.get(user=request.user)
+    for ele in orderlist:
+        order.orderitem.add(ele)
+    print(orderlist)
+    order.save()
+    return redirect('menu')
 
 def logout_student(request):
     logout(request)

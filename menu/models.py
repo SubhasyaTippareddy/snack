@@ -69,13 +69,16 @@ class OrderItem(models.Model):
 	food = models.ForeignKey(Food, on_delete=models.SET_NULL, null=True)
 	quantity = models.IntegerField(default=1, null=True, blank=True)
 	orderitem_id=models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+	def __str__(self):
+		return str(self.food.fname)
 
 class Order(models.Model):
+	trans_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 	student = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True, blank=True)
 	orderitem = models.ManyToManyField(to=OrderItem)
 	complete = models.BooleanField(default=False)
 	date_ordered = models.DateTimeField(auto_now_add=True)
-	transaction_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+
     
 
 	def __str__(self):
