@@ -83,54 +83,33 @@
                             <th class="cart">Product</th>
                             <th> </th>
                             <th class="text-center cart">Price</th>
-                            <th class="text-center cart">Total</th>
+                            <th class="text-center cart">Quantity</th>
                             <th> </th>
                         </tr>
                     </thead>
                     <tbody>
 
-
-
-                        <tr>
-                            <td class="col-sm-8 col-md-6">
-                                <div class="media">
-                                    <div class="media-body">
-                                        <h6 class="stu">{{p.pname}}</h6>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="col-sm-1 col-md-1" style="text-align: center">
-                                <!-- <input type="email" class="form-control" id="exampleInputEmail1" value="3"> -->
-                            </td>
-                            <td class="col-sm-1 col-md-1 text-center"><strong>&#8377;4.87</strong></td>
-                            <td class="col-sm-1 col-md-1 text-center"><strong>&#8377;14.61</strong></td>
-                            <td class="col-sm-1 col-md-1">
-                                <button type="button" class="btn btn-danger">
-                                    <span class="glyphicon glyphicon-remove"></span> Remove
-                                </button>
-                            </td>
-                        </tr>
-
+                        {% for item in items %}
                         <tr>
                             <td class="col-md-6">
                                 <div class="media">
                                     <div class="media-body">
-                                        <h6 class="stu">Product name</h6>
+                                        <h6 class="stu">{{item.food.fname}}</h6>
                                     </div>
                                 </div>
                             </td>
                             <td class="col-md-1" style="text-align: center">
-                                <!-- <input type="email" class="form-control" id="exampleInputEmail1" value="2"> -->
                             </td>
-                            <td class="col-md-1 text-center"><strong>&#8377;4.99</strong></td>
-                            <td class="col-md-1 text-center"><strong>&#8377;9.98</strong></td>
+                            <td class="col-md-1 text-center"><strong>&#8377;{{item.food.price}}</strong></td>
+                            <td class="col-md-1 text-center"><strong>{{item.quantity}}</strong></td>
                             <td class="col-md-1">
                                 <button type="button" class="btn btn-danger">
                                     <span class="glyphicon glyphicon-remove"></span> Remove
                                 </button>
+                                
                             </td>
                         </tr>
-
+                        {% endfor %}
 
 
 

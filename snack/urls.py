@@ -44,10 +44,10 @@ urlpatterns = [
 
     #cart
     path('cart',views.Cart,name='cart'),
-    path('dele',views.dele,name='dele'),
 
+    path('add_to_cart/<uuid:food_id>',views.add_to_cart, name='add_to_cart'),
     #cook_views
-    path('login/chef/cook',views.Cook,name='cook'), #cook after login
+    path('cook_orders',views.Cook,name='cook'), #cook after login
     
     path('accounts',include('django.contrib.auth.urls')),
 ]
