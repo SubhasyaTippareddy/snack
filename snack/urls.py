@@ -38,7 +38,9 @@ urlpatterns = [
     path('clogout/',views.logout_cook,name='cooklogout'),
 
     #menu and submenus
-    path('menu/',views.menu,name='menu'), #student afterlogin
+    path('menu/',views.menu,name='menu'), 
+    
+    #student afterlogin
     path('menu/breakfast',views.breakFast,name='breakfast'),
     path('menu/lunch',views.lunch,name='lunch'),
 
