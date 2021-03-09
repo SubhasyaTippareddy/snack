@@ -48,6 +48,10 @@
 .quantity {
 	width: 10px;
 }
+.product 
+{
+    padding-bottom: 10px;
+}
 
 body,
 html {

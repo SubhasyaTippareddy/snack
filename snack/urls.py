@@ -38,7 +38,9 @@ urlpatterns = [
     path('clogout/',views.logout_cook,name='cooklogout'),
 
     #menu and submenus
-    path('menu/',views.menu,name='menu'), #student afterlogin
+    path('menu/',views.menu,name='menu'), 
+    
+    #student afterlogin
     path('menu/breakfast',views.breakFast,name='breakfast'),
     path('menu/lunch',views.lunch,name='lunch'),
 
@@ -47,7 +49,8 @@ urlpatterns = [
     # path('dele',views.dele,name='dele'),
 
     #cook_views
-    path('login/chef/cook',views.Cook,name='cook'), #cook after login
+    path('login/chef/cook',views.Cook,name='cook'), 
+    #cook after login
     
     path('accounts',include('django.contrib.auth.urls')),
 ]
