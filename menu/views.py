@@ -12,6 +12,9 @@ def menu(request):
     return render(request,'./index.html',context)
 
 def breakFast(request):
+    food=Food.objects.all()
+    for f in food:
+        print(f.food_id)
     return render(request,'./breakfast.html',context={'food':Food.objects.filter(meal_time='breakfast')})
 
 def lunch(request):
