@@ -3,28 +3,27 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate,login,logout
 from django.views.generic import CreateView
 from .forms import StudentRegistrationForm,CookRegistrationForm
-from .models import User,Food
+from .models import User,Food,CartItem,Student,Order
 from django.contrib.auth.forms import AuthenticationForm
 
+
 def menu(request):
-    context={}
+    context={'user':request.user}
     return render(request,'./index.html',context)
 
 def breakFast(request):
-    return render(request,'./breakfast.html',context={'food':Food.objects.all().filter(meal_time='breakfast'),'combo':Combo.objects().all()})
+    return render(request,'./breakfast.html',context={'food':Food.objects.filter(meal_time='breakfast')})
 
 def lunch(request):
-    return render(request,'./lunch.html',context={'food':Food.objects.all().filter(meal_time='lunch')})
+    return render(request,'./lunch.html',context={'food':Food.objects.filter(meal_time='lunch')})
 
 def Cook(request):
     return render(request,'./cook_orders.html')
 
 def Cart(request):
-    return render(request,'./cart.html')
-
-def dele(request):
-    return render(request,'./dele.html')
-
+    student=Student.objects.get(user=request.user)
+    context={'items':CartItem.objects.filter(student=student)}
+    return render(request,'./cart.html',context)
 
 def forgotpassword(request):
     context={}
@@ -67,13 +66,13 @@ def studentLogin(request):
                 print(password)
                 user=authenticate(username=username,password=password)
                 print(user)
-                print(user)
                 if user is not None:
                         login(request,user)
                         return redirect('menu')
             else:
                 return HttpResponse("Invalid Details given. Please re-enter")
         return render(request, './Student.html',context={'form':AuthenticationForm()})   
+
 #login - 2
 def chefLogin(request):
     if(request.method=='POST'):
@@ -89,7 +88,6 @@ def chefLogin(request):
                 print(password)
                 user=authenticate(username=username,password=password)
                 print(user)
-                print(user)
                 if user is not None:
                         login(request,user)
                         return redirect('cook')
@@ -98,6 +96,38 @@ def chefLogin(request):
         
     context={'form':AuthenticationForm()}
     return render(request,'./Chef.html',context)
+
+def add_to_cart(request, food_id):
+    food=Food.objects.get(food_id=food_id)
+    student=Student.objects.get(user=request.user)
+    citems=CartItem.objects.filter(food=food,student=student)
+    if citems.exists()==False:
+        print(citems)
+        cartitem=CartItem()
+        cartitem.food=food
+        cartitem.student=student
+        cartitem.save()
+        print(cartitem)
+    return redirect('breakfast')
+
+# def confirm_order(request):
+#     #student=Student.objects.get(user=request.user)
+#     cartitems=CartItem.objects.filter(student__user=request.user)
+#     orderlist=[]
+#     for item in cartitems:
+#         orderitem=OrderItem()
+#         orderitem.food=item.food
+#         orderitem.quantity=item.quantity
+#         orderitem.save()
+#         item.delete()
+#         orderlist.append(orderitem)
+#     order=Order()
+#     order.student=Student.objects.get(user=request.user)
+#     order.orderitem=orderlist
+#     order.save()
+
+# def delete_item(request):
+
 
 def logout_student(request):
     logout(request)
