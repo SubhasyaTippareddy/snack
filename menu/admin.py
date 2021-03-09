@@ -6,4 +6,4 @@ admin.site.register(Food)
 admin.site.register(CartItem)
 admin.site.register(Cook)
 admin.site.register(Combo)
-
+admin.site.register(OrderItem)

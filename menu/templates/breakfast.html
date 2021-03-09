@@ -73,67 +73,28 @@
 </head>
 
 <body class="bg">
-    {% for f in food %}
-    <div class="container my-4">
+<div class="container my-4">
         <div class="row">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="row  row-cols-lg-4 row-cols-sm-2 g-4">
+                {% for f in food %}
                 <div class="card">
-                    
 
-                    <div class="box-element product">
-                        <h6><strong>{{f.fname}}</strong></h6>
-                        <!-- <img src="{{f.fimage.url}}" class class="card-img-top" alt="..."> -->
+
+                    <div class="product">
+                        <br>
+                        <h4><strong>{{f.fname}}</strong></h4>
+                        <img src="{{f.fimage.url}}" class="card-img-top"  alt="...">
                         <hr>
-                        <a href={% url 'combos' %}><button
+                        <a href={% url 'add_to_cart' f.food_id %}><button
                             class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button></a>
-
-                        <a class="btn btn-outline-success" href="#">View</a>
                         <h4 style="float: right"><strong>{{f.price}}</strong></h4>
-
                     </div>
-                    
+
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
-    {% endfor %}
-
-    <!-- <div class="container my-4">
-            <div class="row  row-cols-lg-4 row-cols-sm-2 g-4">
-                <div class="col mb-4">
-                    <div class="card">
-                        {% for f in food %}
-                        <div class="card-body">
-                            <div class="product">
-                                <h2 class="fontt"style="float: left;">{{f.fname}}</h1>
-                                        <h2 class="fontt" style="float: right;">{{f.price}}</h2>
-                                        
-                                <div class="buttons">
-                                    <div class="number-input sm-number-input" style="float:right">
-                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                            class="minus">-</button>
-                                        <input min="0" value="1" type="number">
-                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                            class="plus">+</button>
-                                        <button class="add my-4">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div> -->
-
-
-
-
-
-    </div>
-    </div>
-
-
-
-    </section>
 </body>
 
 </html>

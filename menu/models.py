@@ -1,17 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+import uuid
 class User(AbstractUser):
     is_student=models.BooleanField(default=False)
     is_cook=models.BooleanField(default=False)
     person_name=models.CharField(max_length=100)
-    
-# Create your models here.
+
 class Student(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
     sname= models.CharField(max_length=100, blank=False)
 
     def __str__(self):
+        return self.user.username
+
+    def getName(self):
         return self.sname
 
 class Cook(models.Model): 
@@ -22,13 +24,16 @@ class Cook(models.Model):
         return self.user
 
 class Combo(models.Model):
-    comboname=models.CharField(max_length=10)
-    price=models.FloatField()
-    noOfItems=models.PositiveIntegerField()
-    def __str__(self):
-        return self.comboname
+	combo_id=models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+	comboname=models.CharField(max_length=10)
+	price=models.FloatField()
+	noOfItems=models.PositiveIntegerField()
+	#manytomany food
+	def __str__(self):
+		return self.comboname
 
 class Food(models.Model):
+	food_id=models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 	fname = models.CharField(max_length=200)
 	price = models.FloatField()
 	fimage = models.ImageField(null=True, blank=True, upload_to='static/images/')
@@ -46,11 +51,29 @@ class Food(models.Model):
 			url = ''
 		return url
 
+class CartItem(models.Model):
+	food = models.ForeignKey(Food, on_delete=models.SET_NULL, null=True)
+	student= models.ForeignKey(Student, on_delete=models.SET_NULL, null=True)
+	# order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
+	quantity = models.IntegerField(default=1,null=True, blank=True)
+    
+	def __str__(self):
+		return self.food.fname
+	@property
+	def get_total(self):
+		total = self.food.price * self.quantity
+		return total
+
+class OrderItem(models.Model):
+	food = models.ForeignKey(Food, on_delete=models.SET_NULL, null=True)
+	quantity = models.IntegerField(default=1, null=True, blank=True)
+
 class Order(models.Model):
-	Student = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True, blank=True)
+	student = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True, blank=True)
+	orderitem = models.ManyToManyField(to=OrderItem)
 	complete = models.BooleanField(default=False)
 	date_ordered = models.DateTimeField(auto_now_add=True)
-	transaction_id = models.CharField(max_length=100, null=True)
+	transaction_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     
 
 	def __str__(self):
@@ -69,13 +92,3 @@ class Order(models.Model):
 		total = sum([item.quantity for item in fooditems])
 		return total 
 
-class CartItem(models.Model):
-	food = models.ForeignKey(Food, on_delete=models.SET_NULL, null=True)
-	order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
-	quantity = models.IntegerField(default=0, null=True, blank=True)
-	date_added = models.DateTimeField(auto_now_add=True)
-
-	@property
-	def get_total(self):
-		total = self.food.price * self.quantity
-		return total
