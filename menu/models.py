@@ -52,6 +52,7 @@ class Food(models.Model):
 		return url
 
 class CartItem(models.Model):
+	cart_item_id=models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 	food = models.ForeignKey(Food, on_delete=models.SET_NULL, null=True)
 	student= models.ForeignKey(Student, on_delete=models.SET_NULL, null=True)
 	# order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
@@ -67,6 +68,7 @@ class CartItem(models.Model):
 class OrderItem(models.Model):
 	food = models.ForeignKey(Food, on_delete=models.SET_NULL, null=True)
 	quantity = models.IntegerField(default=1, null=True, blank=True)
+	orderitem_id=models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
 class Order(models.Model):
 	student = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True, blank=True)

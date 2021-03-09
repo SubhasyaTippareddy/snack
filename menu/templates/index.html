@@ -53,7 +53,7 @@
                 <div class="dropdown-divider"></div>
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link stu" href={% url 'cart' %}>Your Orders</a>
+                        <a class="nav-link stu" href={% url 'cart' %}>Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link stu" aria-current="page" href="{% url 'studentlogout' %}">Logout ({{user.username}})</a>
@@ -109,7 +109,7 @@
                                 <h5 class="card-title stu">Snacks</h5>
                                 </h5>
                                 <p class="card-text menufont">Keep your friends close and snacks CLOSER!!</p>
-                                <a href="#" class="btn btn-primary">Order!</a>
+                                <a href="{% url 'snacks' %}" class="btn btn-primary">Order!</a>
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                                 <h5 class="card-title stu">Bevarages</h5>
                                 </h5>
                                 <p class="card-text menufont">Give me coke! not Pepsi </p>
-                                <a href="#" class="btn btn-primary">Order!</a>
+                                <a href="{% url 'beverages' %}" class="btn btn-primary">Order!</a>
                             </div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                                 <h5 class="card-title stu">Chips</h5>
                                 </h5>
                                 <p class="card-text menufont">Legends are those people who call it Red Lays not "spanish tomato Tango"</p>
-                                <a href="#" class="btn btn-primary">Order!</a>
+                                <a href="{% url 'chips' %}" class="btn btn-primary">Order!</a>
                             </div>
                         </div>
                     </div>
