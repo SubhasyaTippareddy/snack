@@ -66,7 +66,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{% url 'menu' %}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Snacks</li>
+                <li class="breadcrumb-item active" aria-current="page">Beverages</li>
             </ol>
         </nav>
     </div>
@@ -76,7 +76,7 @@
 <div class="container my-4">
         <div class="row">
             <div class="row  row-cols-lg-4 row-cols-sm-2 g-4">
-                {% for f in food_snacks %}
+                {% for f in food_beverages %}
                 <div class="card">
 
 
@@ -85,7 +85,7 @@
                         <h4><strong>{{f.fname}}</strong></h4>
                         <img src="{{f.fimage.url}}" class="card-img-top"  alt="...">
                         <hr>
-                        <a href={% url 'add_to_cart_snacks' f.food_id %}><button
+                        <a href={% url 'add_to_cart_beverages' f.food_id %}><button
                             class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button></a>
                         <h4 style="float: right"><strong>{{f.price}}</strong></h4>
                     </div>
