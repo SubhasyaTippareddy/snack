@@ -43,11 +43,23 @@ urlpatterns = [
     #student afterlogin
     path('menu/breakfast',views.breakFast,name='breakfast'),
     path('menu/lunch',views.lunch,name='lunch'),
+    path('menu/snacks',views.snacks,name='snacks'),
+    path('menu/beverages',views.beverages,name='beverages'),
+    path('menu/chips',views.chips,name='chips'),
 
     #cart
     path('cart',views.Cart,name='cart'),
+    path('remove_item/<uuid:cart_item_id>', views.remove_item,name='remove_item'),
+    path('add_item/<uuid:cart_item_id>', views.add_item,name='add_item'),
+    path('subtract_item/<uuid:cart_item_id>', views.subtract_item,name='subtract_item'),
+    path('confirm_order',views.confirm_order,name='confirm_order'),
+    #add_to_cart_urls
+    path('add_to_cart/breakfast/<uuid:food_id>',views.add_to_cart_breakfast, name='add_to_cart_breakfast'),
+    path('add_to_cart/lunch/<uuid:food_id>',views.add_to_cart_lunch, name='add_to_cart_lunch'),
+    path('add_to_cart/snacks/<uuid:food_id>',views.add_to_cart_snacks, name='add_to_cart_snacks'),
+    path('add_to_cart/beverages/<uuid:food_id>',views.add_to_cart_beverages, name='add_to_cart_beverages'),
+    path('add_to_cart/chips/<uuid:food_id>',views.add_to_cart_chips, name='add_to_cart_chips'),
 
-    path('add_to_cart/<uuid:food_id>',views.add_to_cart, name='add_to_cart'),
     #cook_views
     path('cook_orders',views.Cook,name='cook'), #cook after login
     

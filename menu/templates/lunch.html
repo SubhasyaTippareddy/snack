@@ -1,7 +1,7 @@
 {% load static%}
 <!doctype html>
 <html lang="en">
-<!--<section class="bg"></section>-->
+
 
 <head>
     <!-- Required meta tags -->
@@ -29,7 +29,7 @@
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Markazi+Text&display=swap" rel="stylesheet">
-    <title>SNACK- Lunch</title>
+    <title>SNACK-breakfast</title>
     <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/breakfast.css'%}">
     <style>
@@ -42,9 +42,6 @@
             margin-top: 0px;
             width: 100%;
         }
-        .product{
-            border-radius:8px;
-        }
     </style>
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ede6f8;">
@@ -53,10 +50,10 @@
             <div class="navbar" id="navbarSupportedContent">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Your Orders</a>
+                        <a class="nav-link stu" href={% url 'cart' %}>Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'studentlogout' %}">Logout</a>
+                        <a class="nav-link stu" aria-current="page" href="{% url 'studentlogout' %}">Logout ({{user.username}})</a>
                     </li>
                 </ul>
 
@@ -76,21 +73,20 @@
 </head>
 
 <body class="bg">
-    
-    <div class="container my-4">
+<div class="container my-4">
         <div class="row">
             <div class="row  row-cols-lg-4 row-cols-sm-2 g-4">
-                {% for f in food %}
+                {% for f in food_lunch %}
                 <div class="card">
 
 
                     <div class="product">
                         <br>
-                        <h6><strong>{{f.fname}}</strong></h6>
+                        <h4><strong>{{f.fname}}</strong></h4>
                         <img src="{{f.fimage.url}}" class="card-img-top"  alt="...">
                         <hr>
-                        <button data-product="{{product.id}}" data-action="add"
-                            class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                        <a href={% url 'add_to_cart_lunch' f.food_id %}><button
+                            class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button></a>
                         <h4 style="float: right"><strong>{{f.price}}</strong></h4>
                     </div>
 
@@ -99,20 +95,6 @@
             </div>
         </div>
     </div>
-   
-
-  
-
-
-
-
-
-    </div>
-    </div>
-
-
-
-    </section>
 </body>
 
 </html>

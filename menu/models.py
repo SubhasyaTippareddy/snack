@@ -52,6 +52,7 @@ class Food(models.Model):
 		return url
 
 class CartItem(models.Model):
+	cart_item_id=models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 	food = models.ForeignKey(Food, on_delete=models.SET_NULL, null=True)
 	student= models.ForeignKey(Student, on_delete=models.SET_NULL, null=True)
 	# order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
@@ -67,13 +68,17 @@ class CartItem(models.Model):
 class OrderItem(models.Model):
 	food = models.ForeignKey(Food, on_delete=models.SET_NULL, null=True)
 	quantity = models.IntegerField(default=1, null=True, blank=True)
+	orderitem_id=models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+	def __str__(self):
+		return str(self.food.fname)
 
 class Order(models.Model):
+	trans_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 	student = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True, blank=True)
 	orderitem = models.ManyToManyField(to=OrderItem)
 	complete = models.BooleanField(default=False)
 	date_ordered = models.DateTimeField(auto_now_add=True)
-	transaction_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+
     
 
 	def __str__(self):
