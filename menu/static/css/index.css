@@ -5,8 +5,8 @@
     /*background-color: black;*/
 
         padding-top: 170px;
-        background-image: radial-gradient(circle, #ece9e1, #f3e7e0, #f8e5e5, #f7e4ee, #ede6f8);
-    
+        /* background-image: radial-gradient(circle, #ece9e1, #f3e7e0, #f8e5e5, #f7e4ee, #ede6f8); */
+        background-color: lavender;
     background-repeat: no-repeat;
     background-attachment:fixed ;
     
@@ -19,7 +19,7 @@
     padding-left: var(--bs-gutter-x,.0rem);
     margin-right: auto;
     margin-left: auto;
-    background-color:#ede6f8;
+    background-color:yellow;
 }
 .navbar {
     position: relative;

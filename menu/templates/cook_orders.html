@@ -38,7 +38,6 @@
             position: fixed;
             z-index: 2;
             top: 0;
-            background-color: beige;
             margin-top: 0px;
             width: 100%;
         }
@@ -54,7 +53,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link stu" aria-current="page" href="{% url 'cooklogout' %}">Logout
-                            (Mahesh)</a>
+                            ({{ name }})</a>
                     </li>
                 </ul>
 
@@ -64,24 +63,6 @@
             <strong>Bro!</strong> Class lo phone use cheyodhu bro
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <!-- 
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="btn-group btn-group-justified">
-
-                    <a class="btn btn-primary" href="#" role="button">Breakfast</a>
-                    <a class="btn btn-primary" href="#" role="button">Lunch</a>
-                    <a class="btn btn-primary" href="#" role="button">Snacks</a>
-                    <a class="btn btn-primary" href="#" role="button">Beverages</a>
-                    <a class="btn btn-primary" href="#" role="button">Chips</a>
-
-
-                </div>
-            </div>
-        </div> -->
-
-
-
     </div>
 </head>
 
@@ -114,16 +95,16 @@
                         </td>
                         <!-- <td class="col-md-1" style="text-align: center">
                         </td> -->
-                        
+
                         {% for food in item.order_items %}
-                        
+
                         <td>{{food.food_name}}</td>
                         <td>{{food.food_price}}</td>
                         <td>{{food.quantity}}</td>
                         {% endfor %}
                         <td>{{item.date}}</td>
                         <td class="col-md-1 text-center w-2"><strong>{{item.total_price}}</strong></td>
-                        <td class="w-5"><a href=#><button type="button"
+                        <td class="w-5"><a href={% url 'cooked' item.trans_id %}><button type="button"
                                     class="btn btn-primary btn-sm">
                                     <span class="glyphicon glyphicon-remove"></span> Done
                                 </button></a></td>

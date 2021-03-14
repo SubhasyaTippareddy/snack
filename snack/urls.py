@@ -62,7 +62,7 @@ urlpatterns = [
 
     #cook_views
     path('cook_orders',views.Cook,name='cook'), #cook after login
-    
+    path('cooked/<uuid:trans_id>',views.cooked,name='cooked'),
     path('accounts',include('django.contrib.auth.urls')),
 ]
 if settings.DEBUG:

@@ -1,13 +1,25 @@
 .bg {
 	/*background-color: black;*/
-	padding-top: 170px;
+	padding-top: 200px;
 	background-image: radial-gradient(circle, #ece9e1, #f3e7e0, #f8e5e5, #f7e4ee, #ede6f8);
 	min-height: 100%;
 	min-width: 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
+.ie {
+    border-radius: 15px;
+    height: 290px;
 
+}
+.foodnames
+{
+	font-family: 'Raleway', sans-serif;
+}
+.foodprice
+{
+	font-family: 'Rajdhani', sans-serif;
+}
 .container-fluid {
 	/* CSS changes made to fill up the nav bar  */
 	width: 100%;
@@ -16,6 +28,15 @@
 	margin-right: auto;
 	margin-left: auto;
 }
+.card {
+    margin-left: 20px;
+    margin-right: 20px;
+	height: 449px;
+    width: 320px;
+	border-radius: 15px;
+	margin-bottom: 20px;
+}
+
 
 .navbar {
 	position: relative;
@@ -53,8 +74,10 @@
     padding-bottom: 10px;
 }
 
+
 body,
 html {
 	height: 100%;
 	margin: 0;
 }
+

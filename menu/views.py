@@ -1,11 +1,11 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth import authenticate,login,logout
 from django.views.generic import CreateView
 from .forms import StudentRegistrationForm,CookRegistrationForm
-from .models import User,Food,CartItem,Student,Order,OrderItem
+from .models import User,Food,CartItem,Student,Order,OrderItem,Combo
 from django.contrib.auth.forms import AuthenticationForm
-
+from django.contrib import messages
 #menu
 def menu(request):
     context={'user':request.user}
@@ -28,30 +28,57 @@ def chips(request):
 
 #cook_orders
 def Cook(request):
-    return render(request,'./cook_orders.html')
-
+    orders=Order.objects.filter(complete=False)
+    context={'items':[order.get_dict() for order in orders],'name':request.user.username }
+    #order=Order.objects.all()
+    #print(order.student)
+    #print(order.values())
+    # print(context)
+    return render(request,'./cook_orders.html',context=context)
+def cooked(request,trans_id):
+    order=Order.objects.get(trans_id=trans_id)
+    order.complete=True
+    order.save()
+    return redirect('cook')
 #student_order
 def Cart(request):
     student=Student.objects.get(user=request.user)
     tot=0
     citems=CartItem.objects.filter(student=student)
+    combos=Combo.objects.all()
+    all_foods=[]
+    valid_combos=[]
+    temp=[]
     for i in citems:
         tot+=i.get_total
-    context={'items':citems,'total':tot}
+        all_foods.append(i.food.fname)
+    for food in all_foods:
+        for c in combos:
+            if food in c.get_combo_dict['food_items']:
+                temp.append(c.get_combo_dict)
+    # for c in combos:
+    #     print(c.get_combo_dict)
+    #valid_combos=list(set(valid_combos))
+    [valid_combos.append(x) for x in temp if x not in valid_combos]
+    print(valid_combos)
+    context={'items':citems,'total':tot,'combos':valid_combos}
     return render(request,'./cart.html',context)
 
 def add_item(request, cart_item_id):
     cartitem=CartItem.objects.get(cart_item_id=cart_item_id)
-    print(cartitem)
-    cartitem.quantity=cartitem.quantity+1
+    if(cartitem.quantity<5):
+        cartitem.quantity=cartitem.quantity+1
     cartitem.save()
     return redirect('cart')
 
 def subtract_item(request, cart_item_id):
     cartitem=CartItem.objects.get(cart_item_id=cart_item_id)
-    print(cartitem)
-    cartitem.quantity=cartitem.quantity-1
-    cartitem.save()
+    if(cartitem.quantity>0):
+        cartitem.quantity=cartitem.quantity-1
+    if(cartitem.quantity==0): 
+        cartitem.delete()
+    else:
+        cartitem.save()
     return redirect('cart')
 
 def remove_item(request, cart_item_id):
@@ -150,12 +177,10 @@ def add_to_cart_lunch(request, food_id):
     student=Student.objects.get(user=request.user)
     citems=CartItem.objects.filter(food=food,student=student)
     if citems.exists()==False:
-        print(citems)
         cartitem=CartItem()
         cartitem.food=food
         cartitem.student=student
         cartitem.save()
-        print(cartitem)
     return redirect('lunch')
 
 def add_to_cart_snacks(request, food_id):
@@ -163,12 +188,10 @@ def add_to_cart_snacks(request, food_id):
     student=Student.objects.get(user=request.user)
     citems=CartItem.objects.filter(food=food,student=student)
     if citems.exists()==False:
-        print(citems)
         cartitem=CartItem()
         cartitem.food=food
         cartitem.student=student
         cartitem.save()
-        print(cartitem)
     return redirect('snacks')
 
 def add_to_cart_beverages(request, food_id):
@@ -176,12 +199,10 @@ def add_to_cart_beverages(request, food_id):
     student=Student.objects.get(user=request.user)
     citems=CartItem.objects.filter(food=food,student=student)
     if citems.exists()==False:
-        print(citems)
         cartitem=CartItem()
         cartitem.food=food
         cartitem.student=student
         cartitem.save()
-        print(cartitem)
     return redirect('beverages')
 
 def add_to_cart_chips(request, food_id):
@@ -189,33 +210,36 @@ def add_to_cart_chips(request, food_id):
     student=Student.objects.get(user=request.user)
     citems=CartItem.objects.filter(food=food,student=student)
     if citems.exists()==False:
-        print(citems)
+        # print(citems)
         cartitem=CartItem()
         cartitem.food=food
         cartitem.student=student
         cartitem.save()
-        print(cartitem)
+        # print(cartitem)
     return redirect('chips')
 
 def confirm_order(request):
     #student=Student.objects.get(user=request.user)
     cartitems=CartItem.objects.filter(student__user=request.user)
     orderlist=[]
-    for item in cartitems:
-        order_item=OrderItem()
-        order_item.food=item.food
-        order_item.quantity=item.quantity
-        order_item.save()
-        print(order_item)
-        orderlist.append(order_item)
-        item.delete()
-    order=Order()
-    order.student=Student.objects.get(user=request.user)
-    for ele in orderlist:
-        order.orderitem.add(ele)
-    print(orderlist)
-    order.save()
-    return redirect('menu')
+    if cartitems.exists():
+        for item in cartitems:
+            order_item=OrderItem()
+            order_item.food=item.food
+            order_item.quantity=item.quantity
+            order_item.save()
+            orderlist.append(order_item)
+            item.delete()
+        order=Order()
+        od=Order.objects.all()
+        order.student=Student.objects.get(user=request.user)
+        order.save()
+        order.orderitem.add(*orderlist)
+        order.save()
+        return redirect('menu')
+    else:
+        messages.info(request,'Cart is empty!')
+        return HttpResponseRedirect('cart')
 
 def logout_student(request):
     logout(request)
