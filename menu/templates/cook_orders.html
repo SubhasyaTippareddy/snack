@@ -41,6 +41,12 @@
             margin-top: 0px;
             width: 100%;
         }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            height: 50%;
+        }
     </style>
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ede6f8;">
@@ -69,54 +75,77 @@
 
 <body class="bg">
 
-</body>
-<div class="container con">
-    <div class="row">
-        <div class="col-sm-12 col-md-10 col-md-offset-1">
-            <table class="table table-hover ">
-                <thead>
-                    <tr>
-                        <th class="cart">StudentID</th>
-                        <th></th>
-                        <th class="text-center cart">Quantity</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
 
-                    {% for item in items %}
-                    <tr>
-                        <td class="col-md-6">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h6 class="stu">{{item.student}}</h6>
-                                </div>
-                            </div>
-                        </td>
-                        <!-- <td class="col-md-1" style="text-align: center">
-                        </td> -->
+    <div class="container">
+
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <div class="table-responsive">
+                <table class="table table-hover ">
+                    <thead>
+                        <tr>
+                            <th class="cart">StudentID</th>
+                            <th class="text-center cart">Order</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+
+                        {% for item in items %}
+                        <tr>
+                            <td class="col-md-6">
+                        <tr>
+                            <th rowspan={{ length }}>{{item.student}}</th>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
 
                         {% for food in item.order_items %}
+                        <tr>
+                            <td></td>
+                            <td>{{ food.food_name }}</td>
+                            <td>{{ food.quantity }}</td>
 
-                        <td>{{food.food_name}}</td>
-                        <td>{{food.food_price}}</td>
-                        <td>{{food.quantity}}</td>
-                        {% endfor %}
-                        <td>{{item.date}}</td>
-                        <td class="col-md-1 text-center w-2"><strong>{{item.total_price}}</strong></td>
-                        <td class="w-5"><a href={% url 'cooked' item.trans_id %}><button type="button"
-                                    class="btn btn-primary btn-sm">
-                                    <span class="glyphicon glyphicon-remove"></span> Done
-                                </button></a></td>
+                            <td>&#8377;{{ food.food_price }}</td>
+                        </tr>
+
                         {% endfor %}
 
+                        </td>
+                        <td class="col-md-1" style="text-align: center">
+                        </td>
 
 
-                </tbody>
-            </table>
+                        <tr>
+                            <td></td>
+                            <td><strong>Total</strong></td>
+
+                            <td class="col-md-1 text-center w-2"><strong>&#8377;{{ item.total_price }}</strong></td>
+                            <td class="w-5">
+                                <a href={% url 'cooked' item.trans_id %}><button type="button"
+                                        class="btn btn-primary btn-sm">
+                                        <span class="glyphicon glyphicon-remove"></span> Done
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
         </div>
     </div>
-</div>
+
+
+
+
+</body>
+
 
 
 
